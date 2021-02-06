@@ -1,2 +1,2 @@
 # gym-site
-Website fir gym using MERN stack
+Website for gym using MERN stack
