@@ -15,14 +15,14 @@ const User = mongoose.model('User' , {
   lastName :{
     type : String
   },
-  password :{
+  DOB :{
+    type : Date
+  },
+  gender:{
     type : String
   },
-  email:{
-    type : String
-  },
-  gender :{
-    type : String
+  number :{
+    type : Number
   }
 })
 
@@ -44,13 +44,14 @@ app.post('/api' ,(req, res) => {
   const user = new User ({
     firstName : req.body.firstName,
     lastName : req.body.lastName,
-    password : req.body.password,
-    email : req.body.email,
-    gender : req.body.gender
+    DOB : req.body.DOB,
+    gender : req.body.gender,
+    number : req.body.number
   })
 
   user.save().then(()=>{
       console.log('Save successfully');
+      //res.send('Save successfully');
   }).catch((error)=>{
      console.log(error);
   })
